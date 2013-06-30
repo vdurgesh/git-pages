@@ -1,72 +1,22 @@
+---
+layout: default
+title: Durgesh Vaishnav
+---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Durgesh Vaishnav</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Durgesh Vaishnav">
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-
-  <body>
-
-
-
-    <!-- NAVBAR
-    ================================================== -->
-    <div class="navbar-wrapper">
-      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-      <div class="container">
-
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">Technology Blog</a>
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                
-                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Technology <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">Spring</a></li>
-                    <li><a href="#">Hibernate</a></li>
-                    <li class="divider"></li>
-                    <li class="nav-header">General</li>
-                    <li><a href="#">Design Patterns</a></li>
-                    <li><a href="#">Network</a></li>
-                    <li><a href="#">Cloud</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div><!-- /.navbar-inner -->
-        </div><!-- /.navbar -->
-
-      </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
-
-
-
-    <!-- Carousel
+<!--<div id="home">
+  <h1>Blog Posts</h1>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>-->
+<!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <img src="images/home_bk_2.jpg" alt="">
+          <img src="/images/home_bk_2.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
@@ -76,7 +26,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="images/home_bk_1.jpg" alt="">
+          <img src="/images/home_bk_1.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
@@ -86,7 +36,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="images/home_bk_3.jpg" alt="">
+          <img src="/images/home_bk_3.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
@@ -101,68 +51,9 @@
     </div><!-- /.carousel -->
 
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Inspirational Quotes</h2>
-          <p>"Enthusiasm is one of the most powerful engines of success. When you do a thing, do it with all your mind. Put your whole soul to it. Stamp it with your own personality. Be active, be energetic, be enthusiastic and faithful, and you will accomplish your object. Nothing great was ever achieved without enthusiasm."
--- Ralph Waldo Emerson</p>
-          <p><a class="btn" href="quotes.html">More &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Technology</h2>
-          <p>In Progress</p>
-          <p><a class="btn" href="#">More &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Links</h2>
-          <p><a href="https://blogs.oracle.com/java/entry/java_se_8_schedule">Java 8 Schedule</a></p>
-          <p><a class="btn" href="#">More &raquo;</a></p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Durgesh Vaishnav</p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-2.0.2.min.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-    
-    <script>
-      !function ($) {
-        $(function(){
-          // carousel demo
-          $('#myCarousel').carousel()
-        })
-      }(window.jQuery)
-    </script>
-    
-  </body>
-</html>
+    <h1>Blog Posts</h1>
+    <ul class="posts">
+      {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
