@@ -21,7 +21,7 @@ title: Durgesh Vaishnav
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
               <p class="lead">Thank you for visiting my technology blog! By writing this blog, I intend to share my experience and ideas with everyone on latest technological trends.</p>
-              <a class="btn btn-large btn-primary" href="about.html">About Me</a>
+              <!--<a class="btn btn-large btn-primary" href="about.html">About Me</a>-->
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ title: Durgesh Vaishnav
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
               <p class="lead">Thank you for visiting my technology blog! By writing this blog, I intend to share my experience and ideas with everyone on latest technological trends.</p>
-              <a class="btn btn-large btn-primary" href="#">Technology</a>
+             <!-- <a class="btn btn-large btn-primary" href="#">Technology</a>-->
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ title: Durgesh Vaishnav
             <div class="carousel-caption">
               <h1>Durgesh Vaishnav</h1>
               <p class="lead">Thank you for visiting my technology blog! By writing this blog, I intend to share my experience and ideas with everyone on latest technological trends.</p>
-              <a class="btn btn-large btn-primary" href="quotes.html">Inspirational Quotes</a>
+              <!--<a class="btn btn-large btn-primary" href="quotes.html">Inspirational Quotes</a>-->
             </div>
           </div>
         </div>
@@ -51,9 +51,17 @@ title: Durgesh Vaishnav
     </div><!-- /.carousel -->
 
 
-    <h1>Blog Posts</h1>
-    <ul class="posts">
+    <h1>Posts</h1>
+    <table class='table table-striped'>
+    <tbody>
       {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <tr>
+          <td>
+            <span>{{ post.date | date_to_string }}</span> &raquo; 
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <small>{{ post.excerpt }}</small>
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </tbody>
+    </table>

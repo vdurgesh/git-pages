@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Inspirational Quotes >> NASA"
+date:   2013-06-27 9:00:00
+categories: quotes
+---
+NASA has been one of the most successful public investments in motivating students to do well and achieve all they can achieve. It's sad that we are turning the programme in a direction where it will reduce the amount of motivation and stimulation it provides to young people.--Neil Armstrong
