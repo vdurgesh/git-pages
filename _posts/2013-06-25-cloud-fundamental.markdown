@@ -17,11 +17,7 @@ By Defination, "Cloud Computing is the practice of using a network of remote ser
 Capacity planning, cost reduction, and organizational agility are primary features that exposed the need for cloud computing.
 
 
-{% image cloud_funda.jpg %}
-  title: cloud
-  alt: Something Important
-  link: http://www.google.com
-{% endimage %}
+
 
 Check out the [What is cloud][whatiscloud] for more quick reference site.
 
