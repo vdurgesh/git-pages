@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Core Java - Durgesh Vaishnav</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Durgesh Vaishnav">
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <!--<link rel="stylesheet" href="/css/main.css"> -->
+        <!-- Custom CSS -->
+       
+       <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+       <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+       <link rel="stylesheet" href="/css/style.css">   
+    </head>
+    <body>
+         <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Technology Blog</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about.html">About Me</a></li>
+                <li><a href="/tech.html">Tech</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+        <div class="container">
+
+<div class="page-title"> <h2>Core Java</h2></div>
+     <div class="featurette">
+     	<p class="lead"><span class="muted">What are the principle concepts of OOPS?</span>
+				Abstraction, Polymorphism, Inheritance, Encapsulation</p>
+		<p class="lead"><span class="muted">What is Abstraction?</span>
+			Abstraction refers to the act of representing essential features without including the background details or explanations. (i.e. Java Interface)</p>
+		<p class="lead"><span class="muted">What is Encapsulation?</span>
+Encapsulation is a technique used for hiding the properties and behaviors of an object and allowing outside access only as appropriate. (i.e. use modifier private,public,protected etc).</p>
+
+<p class="lead"><span class="muted">What is the difference between abstraction and encapsulation?</span>
+Abstraction focuses on the outside view of an object (i.e. the interface) Encapsulation (information hiding) prevents clients from seeing it’s inside view, where the behavior of the abstraction is implemented.
+Abstraction solves the problem in the design side while Encapsulation is the Implementation.
+Encapsulation is the deliverables of Abstraction. Encapsulation barely talks about grouping up your abstraction to suit the developer needs.</p>
+
+<p class="lead"><span class="muted">What is Inheritance?</span>
+Inheritance is the process by which objects of one class acquire the properties of objects of another class.
+A class that is inherited is called a superclass.
+The class that does the inheriting is called a subclass.
+Inheritance is done by using the keyword extends.
+The two most common reasons to use inheritance are: a) To promote code reuse
+b) To use polymorphism</p>
+
+<p class="lead"><span class="muted">What is Polymorphism?</span>
+Polymorphism is briefly described as "one interface, many implementations." Polymorphism is a characteristic of being able to assign a different meaning or usage to something in different contexts - specifically, to allow an entity such as a variable, a function, or an object to have more than one form.</p>
+
+<p class="lead"><span class="muted">How does Java implement polymorphism?</span>
+(Inheritance, Overloading and Overriding are used to achieve Polymorphism in java).
+Polymorphism manifests itself in Java in the form of multiple methods having the same name.
+In some cases, multiple methods have the same name, but different formal argument lists (overloaded methods).
+In other cases, multiple methods have the same name, same return type, and same formal argument list (overridden methods).</p>
+
+<p class="lead"><span class="muted">Explain the different forms of Polymorphism.</span>
+There are two types of polymorphism one is Compile time polymorphism and the other is run time polymorphism. Compile time polymorphism is method overloading. Runtime time polymorphism is done using inheritance and interface.
+Note: From a practical programming viewpoint, polymorphism manifests itself in three distinct forms in Java:
+Method overloading, Method overriding through inheritance, Method overriding through the Java interface</p>
+ 
+<p class="lead"><span class="muted">What is runtime polymorphism or dynamic method dispatch?</span>
+In Java, runtime polymorphism or dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than at compile-time. In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+</p>
+<p class="lead"><span class="muted">What is Dynamic Binding?</span>
+Binding refers to the linking of a procedure call to the code to be executed in response to the call. Dynamic binding (also known as late binding) means that the code associated with a given procedure call is not known until the time of the call at run-time. It is associated with polymorphism and inheritance.
+</p>
+<p class="lead"><span class="muted">What is method overloading?</span>
+Method Overloading means to have two or more methods with same name in the same class with different arguments. The benefit of method overloading is that it allows you to implement methods that support the same semantic operation but differ by argument number or type.
+Note:
+Overloaded methods MUST change the argument list
+Overloaded methods CAN change the return type
+Overloaded methods CAN change the access modifier
+Overloaded methods CAN declare new or broader checked exceptions
+A method can be overloaded in the same class or in a subclass
+</p>
+<p class="lead"><span class="muted">What is method overriding?</span>
+Method overriding occurs when sub class declares a method that has the same type arguments as a method declared by one of its superclass. The key benefit of overriding is the ability to define behavior that’s specific to a particular subclass type.
+Note:
+The overriding method cannot have a more restrictive access modifier than the method being overridden (Ex: You can’t override a method marked public and make it protected).
+You cannot override a method marked final
+You cannot override a method marked static
+</p>
+<p class="lead"><span class="muted">What are the differences between method overloading and method overriding?</span>
+ 	Overloaded Method : Arguments must change, Return type can change, Exceptions can change, Access can change, Invocation Reference type determines which overloaded version is selected. Happens at compile time.
+    <br>
+    Overridden Method : Arguments must not change, Return type can’t change except for covariant returns, Exceptions can reduce or eliminate. Must not throw new or broader checked exceptions, Access must not make more restrictive (can be less restrictive), Invocation Object type determines which method is selected. Happens at runtime.
+</p>
+
+<p class="lead"><span class="muted">Can overloaded methods be override too?</span>
+Yes, derived classes still can override the overloaded methods. Polymorphism can still happen. Compiler will not binding the method calls since it is overloaded, because it might be overridden now or in the future.
+</p>
+<p class="lead"><span class="muted">Is it possible to override the main method?</span>
+NO, because main is a static method. A static method can't be overridden in Java.
+</p>
+<p class="lead"><span class="muted">How to invoke a superclass version of an Overridden method?</span>
+To invoke a superclass method that has been overridden in a subclass, you must either call the method directly through a superclass instance, or use the super prefix in the subclass itself. From the point of the view of the subclass, the super prefix provides an explicit reference to the superclass' implementation of the method.
+	 // From subclass
+		super.overriddenMethod();
+</p>
+<p class="lead"><span class="muted">What is super?</span>
+super is a keyword which is used to access the method or member variables from the superclass. If a method hides one of the member variables in its superclass, the method can refer to the hidden variable through the use of the super keyword. In the same way, if a method overrides one of the methods in its superclass, the method can invoke the overridden method through the use of the super keyword. 
+Note:
+You can only go back one level.
+In the constructor, if you use super(), it must be the very first code, and you cannot access any this.xxx variables or methods to compute its parameters.</p>
+
+<p class="lead"><span class="muted">How do you prevent a method from being overridden?</span>
+To prevent a specific method from being overridden in a subclass, use the final modifier on the method declaration, which means "this is the final implementation of this method", the end of its inheritance hierarchy.
+					<div class='highlight'><pre><code class='java'>
+	                       public final void exampleMethod() {
+                          //  Method statements
+                          }</code></pre></div></p>
+
+<p class="lead"><span class="muted">What is an Interface?</span>
+An interface is a description of a set of methods that conforming implementing classes must have.
+Note:
+You can’t mark an interface as final.
+Interface variables must be static.
+An Interface cannot extend anything but another interfaces.</p>
+
+
+<p class="lead"><span class="muted">Can we instantiate an interface?</span>
+You can’t instantiate an interface directly, but you can instantiate a class that implements an interface.</p>
+
+<p class="lead"><span class="muted">Can we create an object for an interface?</span>
+Yes, it is always necessary to create an object implementation for an interface. Interfaces cannot be instantiated in their own right, so you must write a class that implements the interface and fulfill all the methods defined in it.</p>
+
+<p class="lead"><span class="muted">Do interfaces have member variables?</span>
+Interfaces may have member variables, but these are implicitly public, static, and final- in other words, interfaces can declare only constants, not instance variables that are available to all implementations and may be used as key references for method arguments for example.</p>
+
+<p class="lead"><span class="muted">What modifiers are allowed for methods in an Interface?</span>
+Only public and abstract modifiers are allowed for methods in interfaces.</p>
+
+<p class="lead"><span class="muted">What is a marker interface?</span>
+Marker interfaces are those which do not declare any required methods, but signify their compatibility with certain operations. The java.io.Serializable interface and Cloneable are typical marker interfaces. These do not contain any methods, but classes must implement this interface in order to be serialized and de-serialized.</p>
+
+<p class="lead"><span class="muted">What is an abstract class?</span>
+Abstract classes are classes that contain one or more abstract methods. An abstract method is a method that is declared, but contains no implementation. 
+Note:
+If even a single method is abstract, the whole class must be declared abstract.
+Abstract classes may not be instantiated, and require subclasses to provide implementations for the abstract methods.
+You can’t mark a class as both abstract and final.</p>
+
+<p class="lead"><span class="muted">Can we instantiate an abstract class?</span>
+An abstract class can never be instantiated. Its sole purpose is to be extended (subclassed).</p>
+
+<p class="lead"><span class="muted">What are the differences between Interface and Abstract class?</span>
+<b>Abstract Class</b>	
+An abstract class can provide complete, default code and/or just the details that have to be overridden.	
+In case of abstract class, a class may extend only one abstract class.	
+An abstract class can have non-abstract methods.	
+An abstract class can have instance variables.	
+An abstract class can have any visibility: public, private, protected.	
+If we add a new method to an abstract class then we have the option of providing default implementation and therefore all the existing code might work properly.	
+An abstract class can contain constructors .	
+Abstract classes are fast.<br>	
+<b>Interfaces</b>
+An interface cannot provide any code at all,just the signature.
+A Class may implement several interfaces.
+All methods of an Interface are abstract.
+An Interface cannot have instance variables.
+An Interface visibility must be public (or) none.
+If we add a new method to an Interface then we have to track down all the implementations of the interface and define implementation for the new method.
+An Interface cannot contain constructors.
+Interfaces are slow as it requires extra indirection to find corresponding method in the actual class.
+</p>
+
+<p class="lead"><span class="muted">When should I use abstract classes and when should I use interfaces?</span>
+Use Interfaces when…
+You see that something in your design will change frequently.
+If various implementations only share method signatures then it is better to use Interfaces.
+you need some classes to use some methods which you don't want to be included in the class, then you go for the interface, which makes it easy to just implement and make use of the methods defined in the interface.
+Use Abstract Class when…
+If various implementations are of the same kind and use common behavior or status then abstract class is better to use.
+When you want to provide a generalized form of abstraction and leave the implementation task with the inheriting subclass.
+Abstract classes are an excellent way to create planned inheritance hierarchies. They're also a good choice for nonleaf classes in class hierarchies.</p>
+
+<p class="lead"><span class="muted">When you declare a method as abstract, can other nonabstract methods access it?</span>
+Yes, other nonabstract methods can access a method that you declare as abstract.</p>
+
+<p class="lead"><span class="muted">Can there be an abstract class with no abstract methods in it?</span>
+Yes, there can be an abstract class without abstract methods.</p>
+</div>
+<hr class="featurette-divider">      
+            <footer>
+              <p class="pull-right"><a href="#">Back to top</a></p>
+              <p>&copy; 2013 Durgesh Vaishnav Technology Blog, with help of <a href="http://jekyllrb.com/">Jekyll</a> and 
+                <a href="http://twitter.github.io/bootstrap">Twitter bootstrap</a></p>
+            </footer>
+          
+        </div> <!-- /container -->
+        <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-2.0.2.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+
+    </body>
+</html>

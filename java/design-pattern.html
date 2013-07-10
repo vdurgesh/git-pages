@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Design Pattern - Durgesh Vaishnav</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Durgesh Vaishnav">
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
+
+        <!-- Custom CSS -->
+        <!--<link rel="stylesheet" href="/css/main.css"> -->
+        <!-- Custom CSS -->
+       
+       <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+       <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+       <link rel="stylesheet" href="/css/style.css">   
+    </head>
+    <body>
+         <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">Technology Blog</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about.html">About Me</a></li>
+                <li><a href="/tech.html">Tech</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+        <div class="container">
+
+  <div class="page-title"> <h2>Design Patterns</h2></div>
+  <div> <h3>Creational Patterns</h3></div>
+  <div class="featurette">
+     	<p class="lead"><span class="muted">Abstract Factory -</span>
+				 Provide an interface for creating families of related or dependent object without specifying their concrete classes</p>
+		<p class="lead"><span class="muted">Builder - </span>
+			Separate the construction of a complex object from its representation so that the same construction process can create different representations. </p>
+		<p class="lead"><span class="muted">Factory Method -</span>
+      Define an interface for creating an object, but let subclasses decide which class to instantiate, Factory Methods lets a class defer instantiation to subclasses.</p>
+    <p class="lead"><span class="muted">Prototype -</span>
+      Specify the kinds of objects to create using a prototypical instance and create new objects by copying this prototype.</p>
+    <p class="lead"><span class="muted">Singleton -</span>
+      Ensure a class only has one instance and provide a global point of access to it.</p>
+  </div>
+  <div> <h3>Structural Patterns</h3></div>
+  <div class="featurette">
+      <p class="lead"><span class="muted">Adapter -</span>
+         Convert the interface of a class into another interface clients expect.   Adaptor lets classes work together that couldn’t otherwise because of incompatible interfaces.</p>
+    <p class="lead"><span class="muted">Bridge - </span>
+      Decouple an abstraction from its implementation so that the two can vary independently. </p>
+    <p class="lead"><span class="muted">Composite -</span>
+      Compare objects into tree structures to represent part whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.</p>
+    <p class="lead"><span class="muted">Decorator  -</span>
+      Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to sub-classing for extending functionalit.</p>
+    <p class="lead"><span class="muted">Façade -</span>
+     Provide a unified interface to set of interfaces in a subsystem. Façade defines a higher-level interface that makes the subsystem easier to use.</p>
+    <p class="lead"><span class="muted">Flyweight -</span>
+     Use sharing to support large numbers of fine-grained object efficiently.</p>
+    <p class="lead"><span class="muted">Proxy -</span>
+     Provide a surrogate or place holder for another object to control access to it.</p> 
+  </div>
+  <div> <h3>Behavioral Patterns</h3></div>
+  <div class="featurette">
+      <p class="lead"><span class="muted">Chain of responsibility -</span>
+         Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.</p>
+    <p class="lead"><span class="muted">Command - </span>
+      Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests and support undoable operations. </p>
+    <p class="lead"><span class="muted">Interpreter -</span>
+      Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.</p>
+    <p class="lead"><span class="muted">Iterator -</span>
+      Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+    </p>
+    <p class="lead"><span class="muted">Mediator -</span>
+     Define an object that encapsulates how a set of objects interacts.  Mediator promotes loose coupling by keeping objects from referring to each other explicitly and it lets you vary their interaction independently.</p>
+    <p class="lead"><span class="muted">Memento -</span>
+     Without violating encapsulation, capture and externalize and object’s internal state so that the object can be restored to this state later.</p>
+    <p class="lead"><span class="muted">Observer -</span>
+     Define a one-to-many dependency between objects so that when one objects changes state, all its dependents are notified and updated automatically.</p> 
+     <p class="lead"><span class="muted">State -</span>
+     Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.</p> 
+     <p class="lead"><span class="muted">Strategy -</span>
+     Define a family of algorithms, encapsulate each one and make them interchangeable. Strategy lets the algorithm very independently from clients that use it.</p> 
+     <p class="lead"><span class="muted">Template Methods -</span>
+     Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm ’s structure.</p> 
+     <p class="lead"><span class="muted">Visitor -</span>
+     Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operations without chaining the classes of the elements of which it operates.</p> 
+  </div>
+<hr class="featurette-divider">      
+            <footer>
+              <p class="pull-right"><a href="#">Back to top</a></p>
+              <p>&copy; 2013 Durgesh Vaishnav Technology Blog, with help of <a href="http://jekyllrb.com/">Jekyll</a> and 
+                <a href="http://twitter.github.io/bootstrap">Twitter bootstrap</a></p>
+            </footer>
+          
+        </div> <!-- /container -->
+        <!-- ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-2.0.2.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+    
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+
+    </body>
+</html>
