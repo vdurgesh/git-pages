@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "Working with M2Eclipse"
+date:   2013-08-03 5:00:00
+categories: eclipse
+---
+
+This weekend, I spend some time learning about various eclipses IDE. You may find different Eclipse IDEs depend on your need. As a Java/J2EE developer, I was more interested on Eclipse IDE for java EE Developers and Eclipse IDE for Java developer.
+
+Eclipse IDE for java EE Developer is a tools for Java developers creating Java EE and Web applications, including a Java IDE, tools for Java EE, JPA, JSF, Mylyn, EGit and others. And Eclipse IDE for java Developer is the essential tool for any Java developer, including a Java IDE, a CVS client, Git client, XML Editor, Mylyn, Maven integration and WindowBuilder.
+
+To start, I found little hard to understand best suitable IDE version for me and why there are various name of Eclipse IDE like Kepler, Juno, Indigo etc. After little research, I found below details.
+
+Since 2006, the Eclipse Foundation has coordinated an annual Simultaneous Release. Each release includes the Eclipse Platform as well as a number of other Eclipse projects. Until the Galileo release, releases were named after the moons of the solar system.
+
+So far, each Simultaneous Release has occurred at the end of June.
+ 
+{% highlight ruby %} 
+Release         Date             Platform version    Projects
+Kepler          26 June 2013     4.3                 Kepler Projects
+Juno            27 June 2012     4.2                 Juno Projects
+Indigo          June 2011        3.7                 Indigo projects
+Helios          23 June 2010     3.6                 Helios projects
+Galileo         24 June 2009     3.5                 Galileo projects
+Ganymede        25 June 2008     3.4                 Ganymede projects
+Europa          29 June 2007     3.3                 Europa projects
+Callisto        30 June 2006     3.2                 Callisto projects
+Eclipse 3.1     28 June 2005     3.1  
+Eclipse 3.0     28 June 2004     3.0  
+{% endhighlight %}
+
+To summarize, Helios, Galileo, Ganymede, etc are just code names for versions of the Eclipse platform (personally, I'd prefer Eclipse to use traditional version numbers instead of code names, it would make things clearer and easier). I decided to use Indigo for myself (Web Tool Platform for Java EE).
+
+I like Maven so much, so my next goal was to find a better way to integrate maven project into eclipse Java EE IDE. Then I found m2e-wtp plugin for eclipse and maven integration.  
+
+Even after installation for m2e-wtp, I found it very difficult to create a Dynamic Web Project, which supports Maven dependencies and can execute in Eclipse! 
+
+Here is a simple step, which helps me to create Dynamic Web Project having Maven enabled in Eclipse. This project can be used as base project and can be easily converted to most kind of project like Struts based, Spring MVC based etc.
+
+Step1: Create a new project in Eclipse. Goto File > New > Project.. and select Maven Project from the list. Click Next.
+Step2.Enter “WebApp” as Project name and click Next. On Configuration screen, select war in Packaging and also check the checkbox for src/main/web.
+Step3. use below command to convert Maven project to Dynamic Web Project for eclipse.
+
+{% highlight ruby %}
+mvn eclipse:eclipse -Dwtpversion=1.5
+{% endhighlight %}
+
+Optional if you want to clean previous settings
+{% highlight ruby %}
+mvn eclipse:clean 
+{% endhighlight %}
+
+Step4. On Eclipse: Right click -> Properties -> Project Facets -> Click checkbox for Dynamic Web Module, Java and Javascipt, and push Apply and OK button.
+Step5: finally we need to specify Maven dependencies in Java Build Path of eclipse project. Open Properties.. Dialog box (Alt+Enter) and select Java Build Path. Click “Add Library..” button and select “Maven Managed Dependencies” and click Finish.
+
+Once you have Dynamic Web Project, you may able to run and debug on inbuild tomcat server inside your eclipse.
+
