@@ -7,9 +7,9 @@ categories: java
 
 From last 2 week, I was trying to solve one common problem with java dates on one of web application. It was a simple requirement that User should able to enter date and time on their specified time zone and able to see same time on various reports. 
 
-It is a global web application with various departments on various countries, so system is going to mange departments with a specific time zone (based on location) and every user of that department should able to enter and see same time zone.
+It is a global web application with various departments on various countries, so system has to mange departments and their specific time zone (based on location) and every user of individual department should enter and see dates on same time zone.
 
-Simple, Isn’t it? No it is not so simple with java calendar and MySQL database located on different time zone. You have to be very specific and need to consider following important things.
+Simple, Isn’t it? Not really, it is not so simple with java calendar and MySQL database located on different time zone. You have to be very specific and need to consider following important points.
 
 If your application needs to store dates and time internally, for instance in a database, convert it to UTC time before storing it. It is a lot easier to manage and look for a given date and time, when all dates and times are stored in UTC. If the dates and times were stored in different time zones in a database, it would be hard to look for all dates before or after a certain date. You would need to convert the dates and time zones while searching, in order to compare to the date of the search criteria. This doesn't really work.
 
@@ -37,7 +37,7 @@ System.out.println("NYC: " + calendar.getTimeInMillis());
 {% endhighlight %}
 
 
-You might need to consider little more overhead with Spring MVC and MySQL J2EE application, I did following to achieve expected behavior on my web application.
+You might need to consider little more overhead with Spring MVC with Thymeleaf and joda time api and MySQL J2EE application, I did following to achieve expected behavior on my web application.
 
 1. On Spring MVC, wrote and plugged in DateTimeEditor, which extends PropertyEditorSupport
 
