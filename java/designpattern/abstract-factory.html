@@ -1,0 +1,86 @@
+---
+layout: default
+title: Design Pattern - Abstract Factory
+---
+
+
+<div class="page-title"> <h2>Design Patterns - Abstract Factory</h2></div>
+  <div> <h3>Abstract Factory</h3></div>
+  <div class="featurette">
+  <p class="lead">
+  		<span class="muted">Problem -</span>
+		 A information manager which manages phone number. Phone numbers have a particular rule on which they get generated depending on areas and countries. If at some point the application should be changed in order to support adding numbers form a new country, the code of the application would have to be changed and it would become more and more complicated.
+ </p>
+
+{% highlight ruby %}
+ abstract class Address {
+	public abstract void getAddress();
+}
+
+class USAddress extends Address {
+	public void getAddress() { };
+}
+
+class UKAddress extends Address{
+	public void getAddress() { };
+}
+
+abstract class PhoneNumber {
+	public abstract void getPhoneNumber();
+}
+
+class USPhoneNumber extends PhoneNumber {
+	public void getPhoneNumber() { };
+}
+
+class UKPhoneNumber extends AbstractProductB{
+	public void getPhoneNumber() { };	
+}
+
+abstract class AbstractFactory {
+	abstract Address createAddress();
+	abstract PhoneNumber createPhoneNumber();
+}
+
+class USContactFactory extends AbstractFactory {
+	Address createAddress(){
+		return new USAddress();
+	}
+	PhoneNumber createPhoneNumber(){ 
+		return new USPhoneNumber();
+	}
+}
+
+class UKContactFactory extends AbstractFactory {
+	Address createAddress(){
+		return new UKAddress();
+	}
+	PhoneNumber createPhoneNumber(){
+		return new UKPhoneNumber();
+	}
+}
+
+//Factory creator - an indirect way of instantiating the factories
+class FactoryMaker{
+	private static AbstractFactory pf=null;
+	static AbstractFactory getFactory(String choice){
+		if(choice.equals("US")){
+			pf=new USContactFactory();
+		} else if(choice.equals("UK")){
+			pf=new UKContactFactory();
+		} 
+		return pf;
+	}
+}
+
+// Client
+public class Client{
+	public static void main(String args[]){
+		AbstractFactory pf=FactoryMaker.getFactory("US");
+		AbstractProductA product=pf.createProductA();
+		//more function calls on product
+	}
+}
+
+{% endhighlight %}
+</div>
