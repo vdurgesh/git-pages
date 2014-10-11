@@ -1,0 +1,50 @@
+---
+layout: default
+title: Design Pattern - Factory
+---
+
+
+<div class="page-title"> <h2>Design Patterns - Factory</h2></div>
+  <div> <h3>Builder</h3></div>
+  <div class="featurette">
+  <p class="lead">
+  		<span class="muted">Problem -</span>
+		  Create various type of cars like Sedan, SUV etc.
+ </p>
+ 	<span class="muted">Solution -</span>
+{% highlight ruby %}
+
+interface CarFactory {
+    public Car makeCar();
+}
+ 
+interface Car {
+    public String getType();
+}
+ 
+/* Concrete implementations of the factory and car */
+ 
+class SedanFactory implements CarFactory {
+    public Car makeCar() {
+        return new Sedan();
+    }
+}
+ 
+class Sedan implements Car {
+    public String getType() {
+        return 'Sedan';
+    }
+}
+
+ 
+// Client
+public class Client{
+	public static void main(String args[]){
+		CarFactory factory = new SedanFactory();
+		Car car = factory.makeCar();
+		System.out.println(car.getType());
+	}
+}
+
+{% endhighlight %}
+</div>
