@@ -11,51 +11,51 @@ title: Design Pattern - Abstract Factory
   		<span class="muted">Problem -</span>
 		 A information manager which manages phone number. Phone numbers have a particular rule on which they get generated depending on areas and countries. If at some point the application should be changed in order to support adding numbers form a new country, the code of the application would have to be changed and it would become more and more complicated.
  </p>
-
+ 	<span class="muted">Solution -</span>
 {% highlight ruby %}
- abstract class Address {
+ abstract class AbstractAddress {
 	public abstract void getAddress();
 }
 
-class USAddress extends Address {
+class USAddress extends AbstractAddress {
 	public void getAddress() { };
 }
 
-class UKAddress extends Address{
+class UKAddress extends AbstractAddress{
 	public void getAddress() { };
 }
 
-abstract class PhoneNumber {
+abstract class AbstractPhoneNumber {
 	public abstract void getPhoneNumber();
 }
 
-class USPhoneNumber extends PhoneNumber {
+class USPhoneNumber extends AbstractPhoneNumber {
 	public void getPhoneNumber() { };
 }
 
-class UKPhoneNumber extends AbstractProductB{
+class UKPhoneNumber extends AbstractPhoneNumber {
 	public void getPhoneNumber() { };	
 }
 
 abstract class AbstractFactory {
-	abstract Address createAddress();
-	abstract PhoneNumber createPhoneNumber();
+	abstract AbstractAddress createAddress();
+	abstract AbstractPhoneNumber createPhoneNumber();
 }
 
 class USContactFactory extends AbstractFactory {
-	Address createAddress(){
+	AbstractAddress createAddress(){
 		return new USAddress();
 	}
-	PhoneNumber createPhoneNumber(){ 
+	AbstractPhoneNumber createPhoneNumber(){ 
 		return new USPhoneNumber();
 	}
 }
 
 class UKContactFactory extends AbstractFactory {
-	Address createAddress(){
+	AbstractAddress createAddress(){
 		return new UKAddress();
 	}
-	PhoneNumber createPhoneNumber(){
+	AbstractPhoneNumber createPhoneNumber(){
 		return new UKPhoneNumber();
 	}
 }
@@ -77,7 +77,7 @@ class FactoryMaker{
 public class Client{
 	public static void main(String args[]){
 		AbstractFactory pf=FactoryMaker.getFactory("US");
-		AbstractProductA product=pf.createProductA();
+		AbstractAddress address=pf.createAddress();
 		//more function calls on product
 	}
 }
