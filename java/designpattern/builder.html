@@ -1,0 +1,96 @@
+---
+layout: default
+title: Design Pattern - Builder
+---
+
+
+<div class="page-title"> <h2>Design Patterns - Builder</h2></div>
+  <div> <h3>Builder</h3></div>
+  <div class="featurette">
+  <p class="lead">
+  		<span class="muted">Problem -</span>
+		  Build a car which can have GPS, trip computer and various numbers of seats. Can be a city car, a sports car, or a cabriolet.
+ </p>
+ 	<span class="muted">Solution -</span>
+{% highlight ruby %}
+
+class Car {
+	int seats = 0;
+	boolean cityCar =  false;
+	boolean cabriolet = false;
+	boolean sportCar = false;
+	boolean tripComputer = false;
+	boolean gps = false;
+}
+
+class CarBuilder {
+	int seats = 0;
+	boolean cityCar =  false;
+	boolean cabriolet = false;
+	boolean sportCar = false;
+	boolean tripComputer = false;
+	boolean gps = false;
+
+	new CarBuilder() {
+    }
+
+    Car build() {
+    	Car car = new Car();
+    	car.seats  = this.seats;
+    	car.cityCar  = this.cityCar;
+    	car.cabriolet  = this.cabriolet;
+    	car.sportCar  = this.sportCar;
+    	car.tripComputer  = this.tripComputer;
+    	car.gps  = this.gps;
+	}
+
+    CarBuilder withSeats(int seats) {
+    	this.seat = seats;
+    	return this;
+	}
+
+	CarBuilder withCityCar() {
+    	this.cityCar = true;
+    	return this;
+	}
+
+	CarBuilder withCabriolet() {
+    	this.cabriolet = true;
+    	return this;
+	}
+
+	CarBuilder withSportCar() {
+    	this.sportCar = true;
+    	return this;
+	}
+
+	CarBuilder withTripComputer() {
+    	this.tripComputer = true;
+    	return this;
+	}
+
+	CarBuilder withGPS() {
+    	this.gps = true;
+    	return this;
+	}
+
+}
+
+// Client
+public class Client{
+	public static void main(String args[]){
+		Car car  = new CarBuilder()
+				.withSeats(5)
+				.withCityCar()
+				.withCabriolet()
+				.withSportCar()
+				.withTripComputer()
+				.withGPS().build();
+		....
+	}
+}
+
+{% endhighlight %}
+
+<p>Also We should prefer getter setter with private accessiblity on class.</p>
+</div>
