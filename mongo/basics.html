@@ -27,33 +27,32 @@ Switch to a new database named mydb, with the following operation:
 use mydb
 {% endhighlight %}
 </p></li><li>
-<p class="lead">
-4. use auth to authenticate a connection 
+<p class="lead">Use auth to authenticate a connection 
 {% highlight ruby %} 
 db.auth( "username", "password" )
 {% endhighlight %}
 </p></li><li>
 <p class="lead">
-5. check yoor corrent session 
+Check yoor corrent session 
 {% highlight ruby %} 
 db
 {% endhighlight %}
 </p></li><li>
 <p class="lead">
-6. display help
+Display help
 {% highlight ruby %} 
 help
 {% endhighlight %}
 </p></li><li>
 <p class="lead">
-7. Create documents named j and k:
+Create documents named j and k:
 {% highlight ruby %} 
 j = { name : "mongo" }
 k = { x : 3 }
 {% endhighlight %}
 </p></li><li>
 <p class="lead">
-8. Insert the j and k documents into the testData collection
+Insert the j and k documents into the testData collection
 {% highlight ruby %} 
 db.testData.insert( j )
 db.testData.insert( k )
@@ -63,14 +62,13 @@ When you insert the first document, the mongod will create both the mydb databas
 collection.
 </p></li><li>
 <p class="lead">
-9.Confirm that the testData collection exists
+Confirm that the testData collection exists
 {% highlight ruby %} 
 show collections
 {% endhighlight %}
 </p></li><li>
 <p class="lead">
-
-10. Confirm that the documents exist in the testData collection 
+Confirm that the documents exist in the testData collection 
 {% highlight ruby %} 
 db.testData.find()
 {% endhighlight %}
@@ -80,12 +78,10 @@ Result will be
 { "_id" : ObjectId("4c2209fef3924d31102bd84b"), "x" : 3 }
 {% endhighlight %}
 </p></li><li>
-<p class="lead">
-11. Working with the Cursor
+<p class="lead">Working with the Cursor
 When you query a collection, MongoDB returns a ?cursor? object that contains the results of the query. The mongo shell then iterates over the cursor to display the results. Rather than returning all results at once, the shell iterates over the cursor 20 times to display the first 20 results and then waits for a request to iterate over the remaining results. In the shell, enter it to iterate over the next set of results.
 </p></li><li>
-<p class="lead">
-12. Iterate over the Cursor with a Loop
+<p class="lead">Iterate over the Cursor with a Loop
 {% highlight ruby %} 
 var c = db.testData.find()
 while ( c.hasNext() ) printjson( c.next() )
