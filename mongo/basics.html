@@ -1,0 +1,97 @@
+---
+layout: default
+title: OOPS
+---
+<div class="page-title"> <h2>Mongo Basics</h2></div>
+<div class="featurette">
+<ol> 
+<li><p class="lead">Connect to a database from a system prompt, start mongo
+{% highlight ruby %} 
+mongo 
+{% endhighlight %}
+By default, mongo looks for a database server listening on port 27017 on the localhost interface. 
+To connect to a server on a different port or interface, use the --port and --host options.
+{% highlight ruby %} 
+mongo --port 27017 -u siteUserAdmin -p password --authenticationDatabase admin
+{% endhighlight %}
+</p> </li><li>
+<p class="lead">
+Display the list of databases, with the following operations.
+{% highlight ruby %} 
+show dbs
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+Switch to a new database named mydb, with the following operation:
+{% highlight ruby %} 
+use mydb
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+4. use auth to authenticate a connection 
+{% highlight ruby %} 
+db.auth( "username", "password" )
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+5. check yoor corrent session 
+{% highlight ruby %} 
+db
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+6. display help
+{% highlight ruby %} 
+help
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+7. Create documents named j and k:
+{% highlight ruby %} 
+j = { name : "mongo" }
+k = { x : 3 }
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+8. Insert the j and k documents into the testData collection
+{% highlight ruby %} 
+db.testData.insert( j )
+db.testData.insert( k )
+{% endhighlight %}
+
+When you insert the first document, the mongod will create both the mydb database and the testData
+collection.
+</p></li><li>
+<p class="lead">
+9.Confirm that the testData collection exists
+{% highlight ruby %} 
+show collections
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+
+10. Confirm that the documents exist in the testData collection 
+{% highlight ruby %} 
+db.testData.find()
+{% endhighlight %}
+Result will be 
+{% highlight ruby %} 
+{ "_id" : ObjectId("4c2209f9f3924d31102bd84a"), "name" : "mongo" }
+{ "_id" : ObjectId("4c2209fef3924d31102bd84b"), "x" : 3 }
+{% endhighlight %}
+</p></li><li>
+<p class="lead">
+11. Working with the Cursor
+When you query a collection, MongoDB returns a ?cursor? object that contains the results of the query. The mongo shell then iterates over the cursor to display the results. Rather than returning all results at once, the shell iterates over the cursor 20 times to display the first 20 results and then waits for a request to iterate over the remaining results. In the shell, enter it to iterate over the next set of results.
+</p></li><li>
+<p class="lead">
+12. Iterate over the Cursor with a Loop
+{% highlight ruby %} 
+var c = db.testData.find()
+while ( c.hasNext() ) printjson( c.next() )
+{% endhighlight %}
+To find the document at the array index 4, use the following operation:
+{% highlight ruby %} 
+printjson( c [ 0 ] )
+{% endhighlight %}
+</p></li><li></ul></ol></div> 
