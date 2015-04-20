@@ -1,22 +1,51 @@
 ---
 layout: default
-title: Node js
+title: JavaScript
 ---
-<div class="page-title"> <h2>npm.js</h2></div>
+<div class="page-title"> <h2>Advance Javascript</h2></div>
 <div class="featurette">
 <ol> 
 <li>
 	<p class="lead"> NPM </p>
-	 npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you're sharing. In order to install npm, you need to install node.js first. Run following command 
+	 <p>npm makes it easy for JavaScript developers to share and reuse code, and it makes it easy to update the code that you're sharing. In order to install npm, you need to install node.js first. Run following command </p>
 {% highlight ruby %} 
 node -v
 {% endhighlight %}
 Run node -v. The version should be higher than v0.10.32.
 <p>
-Node comes with npm installed so you should have a version of npm. However, npm gets updated more frequently than Node does, so you'll want to make sure it's the latest version.
+Node comes with npm installed so you should have a version of npm. However, npm gets updated more frequently than Node does, so you'll want to make sure it's the latest version.</p>
 {% highlight ruby %} 
 sudo npm install npm -g.
 {% endhighlight %}
-Test: Run npm -v. The version should be higher than 2.1.8.
+<p>Test: Run npm -v. The version should be higher than 2.1.8.</p>
 </li>
-</ol></div> 
+<li><p class="lead"> Grunt </p> Grunt is a java script task runner, it will help you on running various task like minification, compilation, unit testing, linting, etc. Grunt and Grunt plugins are installed and managed via npm. To start, you need to install Grunt's command line interface (CLI) globally.</p>
+{% highlight ruby %} 
+	sudo npm install -g grunt-cli
+{% endhighlight %}
+<p>This will put the grunt command in your system path, allowing it to be run from any directory.</p>
+<p>
+A typical setup will involve adding two files to your project: <b>package.json</b> and the <b>Gruntfile<b>.
+</p>
+<p>
+package.json: This file is used by npm to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as devDependencies in this file.
+</p>
+<p>
+Gruntfile: This file is named Gruntfile.js or Gruntfile.coffee and is used to configure or define tasks and load Grunt plugins. When this documentation mentions a Gruntfile it is talking about a file, which is either a Gruntfile.js or a Gruntfile.coffee.	</p>
+{% highlight ruby %} 
+	npm init 
+{% endhighlight %}
+<p>Run this command on root directory of your project to create package.json.</p>
+To install grunt to your project directory you just need to run:
+{% highlight ruby %} 
+npm install grunt --save-dev
+{% endhighlight %}
+{% highlight ruby %} 
+grunt
+{% endhighlight %}
+Run this command to execute your javascript task on project.
+
+<p> 
+</li>
+</ol>
+</div> 
