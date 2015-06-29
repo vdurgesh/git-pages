@@ -25,7 +25,7 @@ sudo npm install npm -g.
 {% endhighlight %}
 <p>This will put the grunt command in your system path, allowing it to be run from any directory.</p>
 <p>
-A typical setup will involve adding two files to your project: <b>package.json</b> and the <b>Gruntfile<b>.
+A typical setup will involve adding two files to your project: <b>package.json</b> and the <b>Gruntfile</b>.
 </p>
 <p>
 package.json: This file is used by npm to store metadata for projects published as npm modules. You will list grunt and the Grunt plugins your project needs as devDependencies in this file.
@@ -43,9 +43,34 @@ npm install grunt --save-dev
 {% highlight ruby %} 
 grunt
 {% endhighlight %}
-Run this command to execute your javascript task on project.
-
-<p> 
+<p>Run this command to execute your javascript task on project.</p> 
 </li>
+<li><p class="lead"> Bower </p> Bower is a package manager for web. Web sites are made of lots of things — frameworks, libraries, assets, utilities, and rainbows. Bower manages all these things for you.
+You can install bower with this command.
+{% highlight ruby %} 
+sudo npm install -g bower
+{% endhighlight %}
+You can install any register package with this
+{% highlight ruby %} 
+bower install jquery
+bower install git://github.com/user/package.git
+bower install http://example.com/script.js
+{% endhighlight %}
+
+Use this to initialize bower on your project.
+{% highlight ruby %} 
+bower init
+{% endhighlight %}
+</li>
+<li><p class="lead">grunt-bower</p>Copy bower installed components to dist folder.
+Install grunt bower with this
+{% highlight ruby %} 
+npm install grunt-bower
+{% endhighlight %}
+Then add this line to your project's grunt.js gruntfile:
+{% highlight ruby %} 
+grunt.loadNpmTasks('grunt-bower');
+{% endhighlight %}
+</li>	
 </ol>
 </div> 

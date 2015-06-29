@@ -1,0 +1,60 @@
+---
+layout: default
+title: String (Java) 
+---
+<div class="page-title"> <h2>Thread</h2></div>
+<div class="featurette">
+Strings (Java)
+ <p class="lead">String are constant (immutable), their values cannot be changed after they are created.</p>
+ <p class="lead">String buffers support mutable strings. </p>
+ <p class="lead"> String can be shared because string object are immutable. </p>
+ <p class="lead"> String represent a string in the UTF-16 format.  </p>
+ <p class="lead"> Each time you create a string literal, the JVM checks the string constant pool first. 
+If the string already exists in the pool, a reference to the pooled instance is returned.
+If string doesn't exist in the pool, a new string instance is created and placed in the pool. For example:</p>
+{% highlight ruby %} 
+String s1="Welcome";  
+String s2="Welcome";//will not create new instance  
+{% endhighlight %}
+<p> 
+In the above example only one object will be created. Firstly JVM will not find any string object with the value 
+"Welcome" in string constant pool, so it will create a new object. After that it will find the string with the value 
+"Welcome" in the pool, it will not create new object but will return the reference to the same instance.</p>
+
+<p class="lead"> Java uses concept of string literal to make Java more memory efficient 
+(because no new objects are created if it exists already in string constant pool).</p>
+<p class="lead">
+{% highlight ruby %} 
+String s=new String("Welcome");//creates two objects and one reference variable  
+{% endhighlight %}
+</p>
+<p class="lead">
+In such case, JVM will create a new string object in normal(non pool) heap memory and the literal "Welcome" will be placed in the string constant pool. The variable s will refer to the object in heap(non pool).</p>
+<p class="lead">
+Why string objects are immutable in java?
+
+Because java uses the concept of string literal.Suppose there are 5 reference variables,all referes to one object "abc".If one reference variable changes the value of the object, it will be affected to all the reference variables. That is why string objects are immutable in java.</p>
+<p class="lead">
+After a string literal, all the + will be treated as string concatenation operator.
+</p>
+<p class="lead">
+String Index starts from 0
+</p>
+<p class="lead">
+Java StringBuffer class is thread-safe i.e. multiple threads cannot access it simultaneously. So it is safe and will result in an order.
+</p>
+<p class="lead">
+The Java StringBuilder class is same as StringBuffer class except that it is non-synchronized.
+</p>
+<p class="lead">String Vs StringBuffer
+
+a. String class is immutable but stringbuffer is mutable. 
+b. string is slow and consume more memory when you concat too many string because every time it create a new instance but String buffer is fase and consume less memory when you cancat strings.
+c. string class overrides the equals() method of object so we can compare contents of two strings by equals() method. But StringBuffer doesn't override the equals() method of object
+</p>
+<p class="lead">How can we make immutable class
+1. The instance variable of the class is final i.e. we cannot change the value of it after creating an object.
+2. The class is final so we cannot create the subclass.
+3. There is no setter methods i.e. we have no option to change the value of the instance variable.
+These points makes this class as immutable.</p>
+</div>
