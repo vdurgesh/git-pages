@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Java timezone on Web application"
+title:  "Timezone"
 date:   2014-03-08 10:03:00
 categories: java
 ---
 
-From last 2 week, I was trying to solve one common problem with java dates on one of web application. It was a simple requirement that User should able to enter date and time on their specified time zone and able to see same time on various reports. 
+I spend last two week, trying to solve one common problem with java dates on one of web application. It was a simple requirement that User should able to enter date and time on their specified time zone and able to see same time on various reports. 
 
 It is a global web application with various departments on various countries, so system has to mange departments and their specific time zone (based on location) and every user of individual department should enter and see dates on same time zone.
 
