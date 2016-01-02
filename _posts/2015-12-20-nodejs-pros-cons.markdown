@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "NodeJS Pros and cons"
-date:   2014-03-08 10:03:00
-categories: java
+date:   2015-12-20 6:00:00
+categories: nodejs
 ---
 
 While working on NodeJS, I found these pros and cons quite useful to remember. 
